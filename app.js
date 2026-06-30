@@ -50,9 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- REVIEWS DATABASE ---
   // Emma can paste new generated review lines at the bottom of this array
   const REVIEWS_DATABASE = [
-    { name: "Chloe M. (Bingham High)", stars: 5, text: "Emma did an amazing job on my Gel-X set for Homecoming! The retro daisies are so cute and lasted for over three weeks with zero lifting." },
-    { name: "Avery S.", stars: 5, text: "My starry night stiletto extensions turned out absolutely perfect. Emma is so gentle with prep and is extremely talented at detailed hand-painted art!" },
-    { name: "Mrs. Jenkins", stars: 5, text: "Clean studio, sterilized tools, and wonderful customer service. The Classic Gel Manicure is elegant, durable, and highly recommended for the office." }
+    // Add real reviews here using the Review Generator in Settings
   ];
 
   // --- EMMA'S AVAILABILITY CONFIG & STATE ---
