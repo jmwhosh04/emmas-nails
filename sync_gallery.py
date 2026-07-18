@@ -3,6 +3,7 @@ import re
 import json
 import requests
 import subprocess
+import ctypes
 from io import BytesIO
 from PIL import Image
 
@@ -17,6 +18,27 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(PROJECT_DIR, "assets")
 GALLERY_JSON = os.path.join(PROJECT_DIR, "gallery.json")
 SYNC_REGISTRY = os.path.join(PROJECT_DIR, ".synced_photos.json")
+
+def copy_to_clipboard(text):
+    """
+    Copies text to the Windows clipboard using native ctypes (no external library required).
+    """
+    if not ctypes.windll.user32.OpenClipboard(None):
+        return
+    try:
+        ctypes.windll.user32.EmptyClipboard()
+        data = text.encode('utf-16le') + b'\x00\x00'
+        h_global = ctypes.windll.kernel32.GlobalAlloc(2, len(data)) # GMEM_MOVEABLE = 2
+        if h_global:
+            ptr = ctypes.windll.kernel32.GlobalLock(h_global)
+            if ptr:
+                ctypes.memmove(ptr, data, len(data))
+                ctypes.windll.kernel32.GlobalUnlock(h_global)
+                ctypes.windll.user32.SetClipboardData(13, h_global) # CF_UNICODETEXT = 13
+    except Exception as e:
+        print(f"[!] Clipboard copy failed: {e}")
+    finally:
+        ctypes.windll.user32.CloseClipboard()
 
 # Make sure assets folder exists
 os.makedirs(ASSETS_DIR, exist_ok=True)
@@ -191,6 +213,11 @@ def main():
         
         # Deploy live!
         run_git_sync()
+        
+        # Copy review prompt to clipboard for user
+        copy_to_clipboard("Review the new nails.")
+        print("[+] Auto-copied 'Review the new nails.' to your clipboard!")
+        print("[*] Switch to your chat with Gemini and press Ctrl+V to paste and send!")
     else:
         print("\n[+] No new photos found in the Google Photos album.")
 
