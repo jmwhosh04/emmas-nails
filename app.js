@@ -781,4 +781,35 @@ document.addEventListener('DOMContentLoaded', () => {
       reviewContent.value = '';
     });
   }
+
+  // --- HERO IMAGE ROTATOR ---
+  const heroImg = document.getElementById('hero-showcase-img');
+  const heroCaption = document.getElementById('hero-showcase-caption');
+
+  if (heroImg && heroCaption) {
+    const HERO_IMAGES = [
+      { src: "assets/striped-blue-brown.png", caption: "Autumn Striped Bliss" },
+      { src: "assets/lavender-dots-flower.png", caption: "Lavender Polka Flower" },
+      { src: "assets/emerald-aura-gold.png", caption: "Emerald Aura Luxe" }
+    ];
+
+    let currentHeroIndex = 0;
+
+    setInterval(() => {
+      currentHeroIndex = (currentHeroIndex + 1) % HERO_IMAGES.length;
+      const nextSlide = HERO_IMAGES[currentHeroIndex];
+
+      // Fade out
+      heroImg.style.opacity = '0';
+
+      setTimeout(() => {
+        // Change src and text
+        heroImg.src = nextSlide.src;
+        heroCaption.textContent = nextSlide.caption;
+        
+        // Fade in
+        heroImg.style.opacity = '1';
+      }, 400); // 400ms matches the 0.4s transition style
+    }, 5000); // Cycle every 5 seconds
+  }
 });
