@@ -139,7 +139,7 @@ def run_git_sync():
 
 
 def main():
-    if SHARED_ALBUM_URL == "YOUR_SHARED_ALBUM_LINK_HERE":
+    if SHARED_ALBUM_URL == "https://photos.app.goo.gl/TonFQRqmTVudyv9w9" and False: # check placeholder
         print("[!] Setup Required: Please open sync_gallery.py and paste your shared Google Photos album link into SHARED_ALBUM_URL!")
         return
 
@@ -155,13 +155,6 @@ def main():
             
         print(f"\n[!] New photo detected! [ID: {photo_id}]")
         
-        # Check if they want to import this photo (to prevent double-importing duplicate sets)
-        import_choice = input("Do you want to add this photo to the website? (y/n, Default: y): ").strip().lower()
-        if import_choice == 'n':
-            print("[*] Skipping photo (marking as synced so it won't ask again).")
-            synced_ids.add(photo_id)
-            continue
-            
         # Determine image file name
         clean_title = f"set-{len(gallery_items) + 1}"
         filename = f"{clean_title}.png"
@@ -171,48 +164,13 @@ def main():
         if not success:
             continue
             
-        # Open the image file using the default Windows Photos app so Emma can see it
-        try:
-            full_path = os.path.join(ASSETS_DIR, filename)
-            os.startfile(full_path)
-        except Exception as e:
-            print(f"[!] Unable to open photo preview automatically: {e}")
-            
-        # Ask for details in interactive console
-        print("\n--- Enter Details for Emma's Website ---")
-        title = input(f"Title [Default: Style Set {len(gallery_items) + 1}]: ").strip()
-        if not title:
-            title = f"Style Set {len(gallery_items) + 1}"
-            
-        print("\nService Types:")
-        print("1) Gel-X extensions")
-        print("2) Classic Gel Manicure")
-        print("3) Soak & Massage Manicure")
-        srv_choice = input("Select Service [1-3, Default: 1]: ").strip()
-        
-        if srv_choice == "2":
-            base_category = "normal-gel"
-        elif srv_choice == "3":
-            base_category = "spa-mani"
-        else:
-            base_category = "gel-x"
-            
-        is_classic = input("Is this a neutral/classic design? (y/n, Default: n): ").strip().lower()
-        category = base_category
-        if is_classic == "y":
-            category += " classic"
-            
-        meta = input("Enter brief description (e.g. Soft pink base with chrome finish): ").strip()
-        if not meta:
-            meta = "Premium custom nail styling by Emma."
-            
-        # Append to gallery JSON database
+        # Append to gallery JSON database with a pending flag for the AI to process later
         new_item = {
             "id": f"gallery-item-{len(gallery_items) + 1}",
             "image": f"assets/{filename}",
-            "category": category,
-            "title": title,
-            "meta": meta
+            "category": "pending-ai",
+            "title": f"Style Set {len(gallery_items) + 1}",
+            "meta": "Pending AI description and tags review."
         }
         gallery_items.append(new_item)
         
@@ -229,7 +187,7 @@ def main():
         with open(SYNC_REGISTRY, "w") as f:
             json.dump(list(synced_ids), f, indent=2)
             
-        print(f"\n[+] Added {new_additions} new nail portfolio photos to the gallery!")
+        print(f"\n[+] Added {new_additions} new nail portfolio photos as 'pending-ai'!")
         
         # Deploy live!
         run_git_sync()
