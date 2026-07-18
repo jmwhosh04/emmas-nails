@@ -790,7 +790,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const HERO_IMAGES = [
       { src: "assets/striped-blue-brown.png", caption: "Autumn Striped Bliss" },
       { src: "assets/lavender-dots-flower.png", caption: "Lavender Polka Flower" },
-      { src: "assets/emerald-aura-gold.png", caption: "Emerald Aura Luxe" }
+      { src: "assets/emerald-aura-gold.png", caption: "Emerald Aura Luxe" },
+      { src: "assets/animal-safari-cheetah.png", caption: "Safari Cheetah" },
+      { src: "assets/pastel-candy-dots.png", caption: "Pastel Sweet Candy" },
+      { src: "assets/starry-night-glitter.png", caption: "Starry Night French" }
     ];
 
     let currentHeroIndex = 0;
