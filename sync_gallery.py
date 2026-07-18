@@ -139,9 +139,29 @@ def process_image(img_url, filename):
     # Crop to 1:1 square
     output_img = crop_to_square(output_img)
     
-    # Save optimized file to assets directory as transparent PNG
+    # Blending with empty studio background template if transparent (RGBA)
+    bg_path = os.path.join(ASSETS_DIR, "studio-bg.png")
+    if os.path.exists(bg_path) and output_img.mode == 'RGBA':
+        print("[*] Blending transparent hand cutout with salon studio background template...")
+        try:
+            bg_template = Image.open(bg_path).convert("RGBA")
+            # Resize background template to match cutout size
+            bg_template = bg_template.resize(output_img.size, Image.Resampling.LANCZOS)
+            # Alpha composite the cutout over the template
+            combined_img = Image.alpha_composite(bg_template, output_img)
+            # Convert to RGB to save as optimized image
+            output_img = combined_img.convert("RGB")
+        except Exception as e:
+            print(f"[!] Blending failed: {e}. Saving transparent cutout instead.")
+    
+    # Save optimized file to assets directory
     dest_path = os.path.join(ASSETS_DIR, filename)
-    output_img.save(dest_path, "PNG")
+    # Save as JPEG/RGB or PNG depending on mode
+    if output_img.mode == "RGB":
+        output_img.save(dest_path, "JPEG", quality=90)
+    else:
+        output_img.save(dest_path, "PNG")
+        
     print(f"[+] Image saved successfully to: {dest_path}")
     return True
 
