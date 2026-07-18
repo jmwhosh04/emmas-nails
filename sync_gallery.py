@@ -171,6 +171,13 @@ def main():
         if not success:
             continue
             
+        # Open the image file using the default Windows Photos app so Emma can see it
+        try:
+            full_path = os.path.join(ASSETS_DIR, filename)
+            os.startfile(full_path)
+        except Exception as e:
+            print(f"[!] Unable to open photo preview automatically: {e}")
+            
         # Ask for details in interactive console
         print("\n--- Enter Details for Emma's Website ---")
         title = input(f"Title [Default: Style Set {len(gallery_items) + 1}]: ").strip()
