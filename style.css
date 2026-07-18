@@ -128,16 +128,25 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.6rem;
-  font-weight: 700;
+  gap: 0.3rem;
+  font-size: 1.7rem;
+  font-weight: 800;
   font-family: 'Playfair Display', serif;
   color: var(--text-dark);
+  letter-spacing: -0.02em;
+  transition: var(--transition-smooth);
 }
 
 .logo span {
   color: var(--accent);
   font-style: italic;
+  font-weight: 600;
+  margin-left: 0.2rem;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
 }
 
 .nav {
