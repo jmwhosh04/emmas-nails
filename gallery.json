@@ -82,5 +82,19 @@
     "category": "acrylics",
     "title": "Emerald Leopard Marble",
     "meta": "Emerald marble texture, gold foil, and leopard accents"
+  },
+  {
+    "id": "gallery-item-13",
+    "image": "assets/set-13.png",
+    "category": "gel-x",
+    "title": "Pastel Skittle French & Aura",
+    "meta": "Mix-and-match pastel French tips with a soft pink and blue aura accent nail."
+  },
+  {
+    "id": "gallery-item-14",
+    "image": "assets/set-14.png",
+    "category": "gel-x",
+    "title": "Sunset Ombré Glow",
+    "meta": "Vibrant orange base blending into a soft neon pink ombré tip."
   }
 ]
