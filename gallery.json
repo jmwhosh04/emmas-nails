@@ -42,13 +42,6 @@
     "meta": "Playful dots, stripes, and soft candy swirls on custom shapes"
   },
   {
-    "id": "gallery-item-7",
-    "image": "assets/striped-blue-brown.png",
-    "category": "gel-x art",
-    "title": "Autumn Striped Bliss",
-    "meta": "Elegant navy, white, and chocolate vertical striping details"
-  },
-  {
     "id": "gallery-item-8",
     "image": "assets/animal-safari-cheetah.png",
     "category": "gel-x art",
@@ -56,25 +49,11 @@
     "meta": "Cheetah print, zebra lines, and a custom floral safari charm"
   },
   {
-    "id": "gallery-item-9",
-    "image": "assets/emerald-aura-gold.png",
-    "category": "gel-x art",
-    "title": "Emerald Aura Luxe",
-    "meta": "Deep forest green aura airbrush with gold accent frames"
-  },
-  {
     "id": "gallery-item-10",
     "image": "assets/burgundy-white-french.png",
     "category": "gel-x art",
     "title": "Autumn French Burgundy",
     "meta": "Chic burgundy and solid white French extensions"
-  },
-  {
-    "id": "gallery-item-11",
-    "image": "assets/lavender-dots-flower.png",
-    "category": "gel-x classic art",
-    "title": "Lavender Polka Flower",
-    "meta": "Lilac polka dots with custom hand-crafted flower accents"
   },
   {
     "id": "gallery-item-12",
@@ -96,5 +75,26 @@
     "category": "gel-x art",
     "title": "Sunset Ombré Glow",
     "meta": "Vibrant orange base blending into a soft neon pink ombré tip."
+  },
+  {
+    "id": "gallery-item-9",
+    "image": "assets/emerald-aura-gold.png",
+    "category": "gel-x art",
+    "title": "Emerald Aura Luxe",
+    "meta": "Deep forest green aura airbrush with gold accent frames"
+  },
+  {
+    "id": "gallery-item-11",
+    "image": "assets/lavender-dots-flower.png",
+    "category": "gel-x classic art",
+    "title": "Lavender Polka Flower",
+    "meta": "Lilac polka dots with custom hand-crafted flower accents"
+  },
+  {
+    "id": "gallery-item-7",
+    "image": "assets/striped-blue-brown.png",
+    "category": "gel-x art",
+    "title": "Autumn Striped Bliss",
+    "meta": "Elegant navy, white, and chocolate vertical striping details"
   }
 ]
