@@ -139,10 +139,19 @@ def process_image(img_url, filename):
     # Crop to 1:1 square
     output_img = crop_to_square(output_img)
     
-    # Blending with empty studio background template if transparent (RGBA)
-    bg_path = os.path.join(ASSETS_DIR, "studio-bg.png")
+    # Blending with one of our three salon studio background templates if transparent (RGBA)
+    try:
+        # Determine background number (1, 2, or 3) based on the file number
+        file_num = int(re.findall(r'\d+', filename)[0])
+        bg_num = (file_num % 3) + 1
+    except Exception:
+        bg_num = 1
+        
+    bg_name = f"studio-bg-{bg_num}.png"
+    bg_path = os.path.join(ASSETS_DIR, bg_name)
+    
     if os.path.exists(bg_path) and output_img.mode == 'RGBA':
-        print("[*] Blending transparent hand cutout with salon studio background template...")
+        print(f"[*] Blending transparent hand cutout with salon studio background template ({bg_name})...")
         try:
             bg_template = Image.open(bg_path).convert("RGBA")
             # Resize background template to match cutout size
