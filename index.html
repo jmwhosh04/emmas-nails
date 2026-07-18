@@ -104,8 +104,9 @@
             <i class="fa-solid fa-sparkles"></i>
           </div>
           <h3 class="service-title">Classic Gel Manicure</h3>
-          <div class="service-price"><span>$</span>10</div>
-          <ul class="service-features">
+          <div class="service-price"><span>$</span>10+</div>
+          <span style="font-size: 0.8rem; font-weight: 500; opacity: 0.8; display: block; margin-top: 0.25rem; color: var(--text-medium); text-align: center;">Base Price (Solid Color)</span>
+          <ul class="service-features" style="margin-top: 1.5rem;">
             <li><i class="fa-solid fa-circle-check"></i> Gentle Cuticle Prep</li>
             <li><i class="fa-solid fa-circle-check"></i> Professional Shaping</li>
             <li><i class="fa-solid fa-circle-check"></i> Elegant Gel Color Overlay</li>
@@ -124,8 +125,9 @@
             <i class="fa-solid fa-gem"></i>
           </div>
           <h3 class="service-title">Gel-X Extensions</h3>
-          <div class="service-price"><span>$</span>20</div>
-          <ul class="service-features">
+          <div class="service-price"><span>$</span>20+</div>
+          <span style="font-size: 0.8rem; font-weight: 700; display: block; margin-top: 0.25rem; color: var(--accent-dark); text-align: center;">Base Price (Solid Color)</span>
+          <ul class="service-features" style="margin-top: 1.5rem;">
             <li><i class="fa-solid fa-circle-check"></i> Premium Apres Gel-X Tips</li>
             <li><i class="fa-solid fa-circle-check"></i> Custom Lengths & Shapes</li>
             <li><i class="fa-solid fa-circle-check"></i> Zero Damage to Natural Nails</li>
@@ -143,8 +145,9 @@
             <i class="fa-solid fa-water"></i>
           </div>
           <h3 class="service-title">Soak & Massage Mani</h3>
-          <div class="service-price"><span>$</span>12</div>
-          <ul class="service-features">
+          <div class="service-price"><span>$</span>12+</div>
+          <span style="font-size: 0.8rem; font-weight: 500; opacity: 0.8; display: block; margin-top: 0.25rem; color: var(--text-medium); text-align: center;">Base Price (Solid Color)</span>
+          <ul class="service-features" style="margin-top: 1.5rem;">
             <li><i class="fa-solid fa-circle-check"></i> Warm Hydrating Hand Soak</li>
             <li><i class="fa-solid fa-circle-check"></i> Gentle Cuticle Trim & Care</li>
             <li><i class="fa-solid fa-circle-check"></i> Shaping & Natural Buff Shine</li>
@@ -153,6 +156,32 @@
           </ul>
         </div>
         <a href="#book" class="btn btn-secondary" onclick="document.getElementById('service-select').value='spa-mani'; document.getElementById('service-select').dispatchEvent(new Event('change'));">Select Soak & Massage</a>
+      </div>
+    </div>
+
+    <!-- Nail Art & Add-on Menu -->
+    <div class="art-pricing-banner" style="background: rgba(255, 255, 255, 0.45); border: 1px solid var(--accent-light); border-radius: var(--radius-md); padding: 2rem; margin-top: 2.5rem; backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); text-align: left;">
+      <h3 style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 0.75rem; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-palette" style="color: var(--accent-dark);"></i> Nail Art & Custom Add-ons</h3>
+      <p style="font-size: 0.95rem; color: var(--text-medium); line-height: 1.55; margin-bottom: 1.5rem;">
+        Baseline prices cover a single, solid color. Custom hand-painted art, chrome coatings, and rhinestones require extra time and products. <strong>Final art costs are determined by these Tiers:</strong>
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.25rem;">
+        <div style="background: rgba(255, 255, 255, 0.65); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.85); box-shadow: var(--shadow-sm);">
+          <h4 style="font-size: 1.05rem; color: var(--accent-dark); margin-bottom: 0.4rem; font-weight: 700;">Level 1 Art (+$5)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-medium); line-height: 1.45; margin: 0;">Minimal accent art on 1-2 fingers, polka dots, simple lines, or foil flakes.</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.65); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.85); box-shadow: var(--shadow-sm);">
+          <h4 style="font-size: 1.05rem; color: var(--accent-dark); margin-bottom: 0.4rem; font-weight: 700;">Level 2 Art (+$10)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-medium); line-height: 1.45; margin: 0;">French tips on all nails, retro swirls, or custom hand-drawn daisies (e.g. Y2K Hearts).</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.65); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.85); box-shadow: var(--shadow-sm);">
+          <h4 style="font-size: 1.05rem; color: var(--accent-dark); margin-bottom: 0.4rem; font-weight: 700;">Level 3 Art (+$15)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-medium); line-height: 1.45; margin: 0;">Intricate hand-painted patterns, marble effects, heavy rhinestones, or gems.</p>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.65); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.85); box-shadow: var(--shadow-sm);">
+          <h4 style="font-size: 1.05rem; color: var(--accent-dark); margin-bottom: 0.4rem; font-weight: 700;">Special Add-ons</h4>
+          <p style="font-size: 0.85rem; color: var(--text-medium); line-height: 1.45; margin: 0;">Chrome Overlays (+$5), Rhinestones (+$5), or safe old Gel/Acrylic removals (+$5).</p>
+        </div>
       </div>
     </div>
   </section>
@@ -295,8 +324,9 @@
           </div>
 
           <!-- Direct call warning CTA -->
-          <div id="desktop-direct-link" style="margin-bottom: 1.5rem; font-size: 0.9rem; text-align: center; color: var(--text-medium);">
-            Prefer to call or text directly? <a href="tel:3855427199" style="font-weight: 700; color: var(--accent-dark); text-decoration: underline;"><i class="fa-solid fa-phone-volume"></i> Tap here to Call / Text Emma</a>
+          <div id="desktop-direct-link" style="margin-bottom: 1.5rem; font-size: 0.9rem; text-align: center; color: var(--text-medium); line-height: 1.4;">
+            Prefer to text directly? <a href="tel:3855427199" style="font-weight: 700; color: var(--accent-dark); text-decoration: underline;"><i class="fa-solid fa-phone-volume"></i> Tap here to Text Emma</a><br>
+            <span style="font-size: 0.8rem; opacity: 0.85;">(Be sure to attach a photo of the design you want so she can quote your art tier!)</span>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius-sm); padding: 1.1rem;" id="btn-submit-booking">
@@ -336,8 +366,9 @@
                 <i class="fa-solid fa-phone"></i>
               </div>
               <div class="contact-details">
-                <h5>Text / Call for Inquiries</h5>
-                <a href="tel:3855427199">385-542-7199</a>
+                <h5>Text Emma Directly</h5>
+                <a href="tel:3855427199" style="font-weight: 700; color: var(--accent-dark);">385-542-7199</a>
+                <p style="font-size: 0.75rem; color: var(--text-light); margin-top: 0.15rem; line-height: 1.35; margin-bottom: 0;">*Note: Please include inspiration photos when texting directly for an accurate art tier quote!</p>
               </div>
             </li>
 
