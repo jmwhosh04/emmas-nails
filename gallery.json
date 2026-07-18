@@ -1,0 +1,86 @@
+[
+  {
+    "id": "gallery-item-1",
+    "image": "assets/aura-blue-teal.png",
+    "category": "gel-x",
+    "title": "Aura Teal Dream",
+    "meta": "Sleek blue-to-teal blended aura design"
+  },
+  {
+    "id": "gallery-item-2",
+    "image": "assets/flowery-retro-swirls.png",
+    "category": "acrylics classic",
+    "title": "Retro Flower Swirls",
+    "meta": "Hand-painted orange and yellow daisies with rhinestone details"
+  },
+  {
+    "id": "gallery-item-3",
+    "image": "assets/starry-night-glitter.png",
+    "category": "gel-x",
+    "title": "Starry Night French",
+    "meta": "Deep glittery blue tips, silver stars, and zebra accents"
+  },
+  {
+    "id": "gallery-item-4",
+    "image": "assets/navy-yellow-french.png",
+    "category": "gel-x",
+    "title": "Striped French Chic",
+    "meta": "Sharp stiletto extensions with navy and neon yellow outline accents"
+  },
+  {
+    "id": "gallery-item-5",
+    "image": "assets/pink-swirls-hearts.png",
+    "category": "normal-gel",
+    "title": "Y2K Pink Hearts",
+    "meta": "Bright magenta tips with retro outline hearts and swooshes"
+  },
+  {
+    "id": "gallery-item-6",
+    "image": "assets/pastel-candy-dots.png",
+    "category": "gel-x",
+    "title": "Pastel Sweet Candy",
+    "meta": "Playful dots, stripes, and soft candy swirls on custom shapes"
+  },
+  {
+    "id": "gallery-item-7",
+    "image": "assets/striped-blue-brown.png",
+    "category": "acrylics",
+    "title": "Autumn Striped Bliss",
+    "meta": "Elegant navy, white, and chocolate vertical striping details"
+  },
+  {
+    "id": "gallery-item-8",
+    "image": "assets/animal-safari-cheetah.png",
+    "category": "gel-x",
+    "title": "Safari Cheetah Accent",
+    "meta": "Cheetah print, zebra lines, and a custom floral safari charm"
+  },
+  {
+    "id": "gallery-item-9",
+    "image": "assets/emerald-aura-gold.png",
+    "category": "gel-x",
+    "title": "Emerald Aura Luxe",
+    "meta": "Deep forest green aura airbrush with gold accent frames"
+  },
+  {
+    "id": "gallery-item-10",
+    "image": "assets/burgundy-white-french.png",
+    "category": "gel-x",
+    "title": "Autumn French Burgundy",
+    "meta": "Chic burgundy and solid white French extensions"
+  },
+  {
+    "id": "gallery-item-11",
+    "image": "assets/lavender-dots-flower.png",
+    "category": "gel-x classic",
+    "title": "Lavender Polka Flower",
+    "meta": "Lilac polka dots with custom hand-crafted flower accents"
+  },
+  {
+    "id": "gallery-item-12",
+    "image": "assets/emerald-marble-leopard.png",
+    "category": "acrylics",
+    "title": "Emerald Leopard Marble",
+    "meta": "Emerald marble texture, gold foil, and leopard accents"
+  }
+]

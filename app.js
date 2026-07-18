@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
   const bookingForm = document.getElementById('booking-form');
   const serviceSelect = document.getElementById('service-select');
   const addonCheckboxes = document.querySelectorAll('.addon-checkbox');
@@ -222,8 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
 
       const filterValue = btn.getAttribute('data-filter');
+      const currentGalleryItems = document.querySelectorAll('.gallery-item');
 
-      galleryItems.forEach(item => {
+      currentGalleryItems.forEach(item => {
         const itemCategory = item.getAttribute('data-category') || '';
         const categories = itemCategory.split(' ');
         
@@ -237,6 +237,50 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // --- DYNAMIC PORTFOLIO GALLERY ---
+  const galleryGrid = document.getElementById('gallery-grid');
+  if (galleryGrid) {
+    fetch('gallery.json')
+      .then(res => res.json())
+      .then(data => {
+        renderGallery(data);
+      })
+      .catch(err => console.error('Error fetching gallery database:', err));
+  }
+
+  function renderGallery(items) {
+    if (!galleryGrid) return;
+    galleryGrid.innerHTML = '';
+    
+    // Render items in reverse order so newest additions appear first
+    const itemsCopy = [...items].reverse();
+    
+    itemsCopy.forEach(item => {
+      const firstTag = item.category.split(' ')[0];
+      let tagLabel = 'Gel-X';
+      if (firstTag === 'normal-gel') tagLabel = 'Normal Gel';
+      if (firstTag === 'acrylics') tagLabel = 'Acrylics';
+      if (firstTag === 'spa-mani') tagLabel = 'Spa Mani';
+      
+      const card = document.createElement('div');
+      card.className = 'gallery-item';
+      card.setAttribute('data-category', item.category);
+      card.id = item.id;
+      
+      card.innerHTML = `
+        <div class="gallery-img-wrapper">
+          <img src="${item.image}" alt="${item.title}" class="gallery-img" loading="lazy">
+        </div>
+        <div class="gallery-info">
+          <span class="gallery-tag">${tagLabel}</span>
+          <h3 class="gallery-title">${item.title}</h3>
+          <p class="gallery-meta">${item.meta}</p>
+        </div>
+      `;
+      galleryGrid.appendChild(card);
+    });
+  }
 
   // --- LIVE BOOKING PRICE ESTIMATOR ---
   function calculateTotal() {
