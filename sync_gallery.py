@@ -5,7 +5,7 @@ import requests
 import subprocess
 import ctypes
 from io import BytesIO
-from PIL import Image
+from PIL import Image, ImageFilter
 
 # =====================================================================
 # CONFIGURATION
@@ -137,40 +137,12 @@ def process_image(img_url, filename):
         output_img = input_img
 
     # Crop to 1:1 square
-    output_img = crop_to_square(output_img)
+    # Crop to 1:1 square
+    output_img = crop_to_square(input_img)
     
-    # Blending with one of our three salon studio background templates if transparent (RGBA)
-    try:
-        # Determine background number (1, 2, or 3) based on the file number
-        file_num = int(re.findall(r'\d+', filename)[0])
-        bg_num = (file_num % 3) + 1
-    except Exception:
-        bg_num = 1
-        
-    bg_name = f"studio-bg-{bg_num}.png"
-    bg_path = os.path.join(ASSETS_DIR, bg_name)
-    
-    if os.path.exists(bg_path) and output_img.mode == 'RGBA':
-        print(f"[*] Blending transparent hand cutout with salon studio background template ({bg_name})...")
-        try:
-            bg_template = Image.open(bg_path).convert("RGBA")
-            # Resize background template to match cutout size
-            bg_template = bg_template.resize(output_img.size, Image.Resampling.LANCZOS)
-            # Alpha composite the cutout over the template
-            combined_img = Image.alpha_composite(bg_template, output_img)
-            # Convert to RGB to save as optimized image
-            output_img = combined_img.convert("RGB")
-        except Exception as e:
-            print(f"[!] Blending failed: {e}. Saving transparent cutout instead.")
-    
-    # Save optimized file to assets directory
+    # Save optimized file to assets directory as high-quality JPEG
     dest_path = os.path.join(ASSETS_DIR, filename)
-    # Save as JPEG/RGB or PNG depending on mode
-    if output_img.mode == "RGB":
-        output_img.save(dest_path, "JPEG", quality=90)
-    else:
-        output_img.save(dest_path, "PNG")
-        
+    output_img.save(dest_path, "JPEG", quality=95)
     print(f"[+] Image saved successfully to: {dest_path}")
     return True
 

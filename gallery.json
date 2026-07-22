@@ -73,8 +73,8 @@
     "id": "gallery-item-14",
     "image": "assets/set-14.png",
     "category": "gel-x art",
-    "title": "Sunset Ombré Glow",
-    "meta": "Vibrant orange base blending into a soft neon pink ombré tip."
+    "title": "Sunset Ombr\u00e9 Glow",
+    "meta": "Vibrant orange base blending into a soft neon pink ombr\u00e9 tip."
   },
   {
     "id": "gallery-item-9",
@@ -96,5 +96,47 @@
     "category": "gel-x art",
     "title": "Autumn Striped Bliss",
     "meta": "Elegant navy, white, and chocolate vertical striping details"
+  },
+  {
+    "id": "gallery-item-15",
+    "image": "assets/set-15.png",
+    "category": "gel-x art",
+    "title": "Sunny Skies & Swirls",
+    "meta": "Custom sun sketches, pastel pink swirls, and hand-painted lace outlines"
+  },
+  {
+    "id": "gallery-item-16",
+    "image": "assets/set-16.png",
+    "category": "gel-x art",
+    "title": "Coquette Floral Lace",
+    "meta": "Delicate white lace French tips with custom hand-painted cottagecore pink roses"
+  },
+  {
+    "id": "gallery-item-17",
+    "image": "assets/set-17.png",
+    "category": "gel-x art",
+    "title": "Pink Bow Coquette",
+    "meta": "Soft baby pink nails with a hand-painted white and blue accent bow"
+  },
+  {
+    "id": "gallery-item-18",
+    "image": "assets/set-18.png",
+    "category": "gel-x art",
+    "title": "Sunset Tie-Dye Swirls",
+    "meta": "Warm orange and pink watercolor marble effects on a solid overlay"
+  },
+  {
+    "id": "gallery-item-19",
+    "image": "assets/set-19.png",
+    "category": "gel-x art",
+    "title": "Midnight Chameleon Chrome",
+    "meta": "Stunning dark blue metallic chrome base that shifts to purple and pink highlights"
+  },
+  {
+    "id": "gallery-item-20",
+    "image": "assets/set-20.png",
+    "category": "gel-x solid",
+    "title": "Sparkling Grape Stiletto",
+    "meta": "Vibrant purple-pink glitter overlay on ultra-sharp stiletto nail shapes"
   }
 ]
