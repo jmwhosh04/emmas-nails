@@ -29,20 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- SERVICE PRICING CONFIG ---
   const PRICING = {
     services: {
-      'gel-x': 20,
+      'gel-x': 25,
       'normal-gel': 10,
-      'spa-mani': 12,
       'default': 0
     },
     artTiers: {
       'none': 0,
-      'tier1': 5,
-      'tier2': 10,
-      'tier3': 15
+      'tier1': 0,
+      'tier2': 0,
+      'tier3': 0
     },
     addons: {
-      'chrome': 5,
-      'rhinestones': 5
+      'chrome': 0,
+      'rhinestones': 0
     }
   };
 
